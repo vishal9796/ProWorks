@@ -1,0 +1,147 @@
+<div class="col-sm-12 mainhead">
+    <div class="head col-sm-3">
+        <div class="inner1">Employee</div>
+        <div class="inner2">employee</div>
+    </div>
+    <div class="head col-sm-3">
+        <div class="inner1">P-Type</div>
+        <div class="inner2">{{ptype}}</div>
+    </div>
+    <div class="head col-sm-3">
+        <div class="inner1">Machine</div>
+        <div class="inner2">{{machine}}</div>
+    </div>
+    <div class="head col-sm-3">
+        <div class="inner1">Operation</div>
+        <div class="inner2">{{operation}}</div>
+    </div>
+</div>
+
+<div [hidden]="!loadpage1" class="main">
+    <br>
+    <br>
+    <h1 style="text-align: center;">Production Punch-In</h1>
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col" style="text-align: end;">
+                <button type="button" (click)="ptypeSelected('D')" class="button">Direct</button>
+            </div>
+            <div class="col">
+                <button type="button" disabled="true" class="button">InDirect</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div  [hidden]="!loadpage2" class="main">
+    <br>
+    <div style="display: flex;
+    flex-direction: row-reverse;">         
+        <img src="../../assets/back.png" style="width: 14%;" class="img-fluid" alt="Responsive image">
+
+    </div>
+    <br>
+    <div style="text-align: center;">
+        <h2 id="Select Machine Type"> Select Machine Type </h2>
+        <br>
+        <div style="display: flex;flex-wrap: wrap;justify-content: center;" id="button">
+            <div class="Custombutton"><button style="font-size:15px !important" (click)="mtypeSelected('')" type="button"
+                    class="button">CNC</button></div>
+            <div class="Custombutton"><button style="font-size:15px !important" (click)="mtypeSelected('')"  type="button"
+                    class="button">VMC</button></div>
+            <div class="Custombutton"><button style="font-size:15px !important" (click)="mtypeSelected('')"  type="button"
+                    class="button">Drill</button></div>
+            <div class="Custombutton"><button style="font-size:15px !important" (click)="mtypeSelected('')"  type="button"
+                    class="button">Tap</button></div>
+            <div class="Custombutton"><button style="font-size:15px !important" (click)="mtypeSelected('')"  type="button"
+                    class="button">Mill</button></div>
+
+        </div>
+    </div>
+
+</div>
+
+
+<div   [hidden]="!loadpage3"  class="main">
+    <br>
+    <div style="display: flex;
+    flex-direction: row-reverse;">         
+        <img src="../../assets/back.png" style="width: 14%;" class="img-fluid" alt="Responsive image">
+
+    </div>
+    <br>
+    <div style="text-align: center;">
+        <h2 id="Select Machine Type"> Select Machine Number </h2>
+        <br>
+        <div style="display: flex;flex-wrap: wrap;justify-content: center;" id="button">
+            <div class="Custombutton"><button style="font-size:15px !important" type="button" (click)="machineSelected('1')" class="button">1</button>
+            </div>
+            <div class="Custombutton"><button style="font-size:15px !important" type="button" (click)="machineSelected('2')" class="button">2</button>
+            </div>
+            <div class="Custombutton"><button style="font-size:15px !important" type="button" (click)="machineSelected('3')" class="button">3</button>
+            </div>
+            <div class="Custombutton"><button style="font-size:15px !important" type="button" (click)="machineSelected('4')" class="button">4</button>
+            </div>
+            <div class="Custombutton"><button style="font-size:15px !important" type="button" (click)="machineSelected('5')" class="button">5</button>
+            </div>
+            <div class="Custombutton"><button style="font-size:15px !important" type="button" (click)="machineSelected('6')" class="button">6</button>
+            </div>
+            <div class="Custombutton"><button style="font-size:15px !important" type="button" (click)="machineSelected('7')" class="button">7</button>
+            </div>
+            <div class="Custombutton"><button style="font-size:15px !important" type="button" (click)="machineSelected('8')" class="button">8</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div   [hidden]="!loadpage4"  class="main">
+    <br>
+    <div style="display: flex;
+    flex-direction: row-reverse;">         
+        <img src="../../assets/back.png" style="width: 14%;" class="img-fluid" alt="Responsive image">
+
+    </div>
+    <br>
+    <div style="text-align: center;">
+        <h2 id="Select Machine Type"> Select Operation </h2>
+        <br>
+        <div style="display: flex;flex-wrap: wrap;justify-content: center;" id="button">
+            <div class="Custombutton"><button style="font-size:15px !important" type="button" (click)="oprSelected('opr 1')" class="button">opr 1</button>
+            </div>
+            <div class="Custombutton"><button style="font-size:15px !important" type="button" (click)="oprSelected('opr 2')" class="button">opr 2</button>
+            </div>
+            <div class="Custombutton"><button style="font-size:15px !important" type="button" (click)="oprSelected('opr 3')" class="button">opr 3</button>
+            </div>
+            
+        </div>
+    </div>
+    <br>
+    
+   
+</div>
+
+
+
+<div   [hidden]="!loadpage5"  class="main">
+    <br>
+    <div style="display: flex;
+    flex-direction: row-reverse;">         
+        <img src="../../assets/back.png" style="width: 14%;" class="img-fluid" alt="Responsive image">
+
+    </div>
+    <br>
+    <div style="text-align: center;">
+        <h2 id="Select Machine Type"> Success </h2>
+        <br>
+        <div style="display: flex;flex-wrap: wrap;justify-content: center;" id="button">
+            <div class="Custombutton"><button style="font-size:15px !important" type="button" (click)="success()" class="button">Submit</button>
+            </div>
+             
+            
+        </div>
+    </div>
+    <br>
+    
+   
+</div>

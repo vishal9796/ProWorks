@@ -1,0 +1,6 @@
+{
+	"appId": "com.proworks.app",
+	"appName": "pro-works",
+	"webDir": "dist/pro-works",
+	"bundledWebRuntime": false
+}
