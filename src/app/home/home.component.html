@@ -1,147 +1,105 @@
-<div class="col-sm-12 mainhead">
-    <div class="head col-sm-3">
-        <div class="inner1">Employee</div>
-        <div class="inner2">employee</div>
-    </div>
-    <div class="head col-sm-3">
-        <div class="inner1">P-Type</div>
-        <div class="inner2">{{ptype}}</div>
-    </div>
-    <div class="head col-sm-3">
-        <div class="inner1">Machine</div>
-        <div class="inner2">{{machine}}</div>
-    </div>
-    <div class="head col-sm-3">
-        <div class="inner1">Operation</div>
-        <div class="inner2">{{operation}}</div>
+<div class="container-fluid">
+    <div class="row mainheader py-1 flex-nowrap">
+        <div class="head col-3 py-2">
+            <div class="inner1 mb-1">Employee</div>
+            <div class="inner2">employee</div>
+        </div>
+        <div class="head col-3 py-2">
+            <div class="inner1 mb-1">P-Type</div>
+            <div class="inner2">{{ptype}}</div>
+        </div>
+        <div class="head col-3 py-2">
+            <div class="inner1 mb-1">Machine</div>
+            <div class="inner2">{{machine}}</div>
+        </div>
+        <div class="head col-3 py-2">
+            <div class="inner1 mb-1">Operation</div>
+            <div class="inner2">{{operation}}</div>
+        </div>
     </div>
 </div>
-
-<div [hidden]="!loadpage1" class="main">
-    <br>
-    <br>
-    <h1 style="text-align: center;">Production Punch-In</h1>
-    <br>
-    <div class="container">
-        <div class="row">
-            <div class="col" style="text-align: end;">
-                <button type="button" (click)="ptypeSelected('D')" class="button">Direct</button>
-            </div>
-            <div class="col">
-                <button type="button" disabled="true" class="button">InDirect</button>
+<div [hidden]="!loadpage1" class="main-container p-4">
+    <div class="d-flex align-items-center justify-content-center flex-column">
+        <h1 class="text-center mb-5 heading-01 position-relative">Production Punch-In
+            <span class="divider"></span>
+        </h1>
+        <div class="container1">
+            <div class="d-flex text-center flex-nowrap">
+                <button type="button" (click)="ptypeSelected('D')" class="btn button shadow mr-3 shadow">Direct</button>
+                <button type="button" disabled="true" class="btn button shadow shadow">InDirect</button>
             </div>
         </div>
     </div>
 </div>
 
-<div  [hidden]="!loadpage2" class="main">
-    <br>
-    <div style="display: flex;
-    flex-direction: row-reverse;">         
-        <img src="../../assets/back.png" style="width: 14%;" class="img-fluid" alt="Responsive image">
-
+<div [hidden]="!loadpage2" class="main-container p-4">
+    <div class="back-wrapper">
+        <button class="btn-back"> &lt; Back</button>
     </div>
-    <br>
     <div style="text-align: center;">
-        <h2 id="Select Machine Type"> Select Machine Type </h2>
-        <br>
-        <div style="display: flex;flex-wrap: wrap;justify-content: center;" id="button">
-            <div class="Custombutton"><button style="font-size:15px !important" (click)="mtypeSelected('')" type="button"
-                    class="button">CNC</button></div>
-            <div class="Custombutton"><button style="font-size:15px !important" (click)="mtypeSelected('')"  type="button"
-                    class="button">VMC</button></div>
-            <div class="Custombutton"><button style="font-size:15px !important" (click)="mtypeSelected('')"  type="button"
-                    class="button">Drill</button></div>
-            <div class="Custombutton"><button style="font-size:15px !important" (click)="mtypeSelected('')"  type="button"
-                    class="button">Tap</button></div>
-            <div class="Custombutton"><button style="font-size:15px !important" (click)="mtypeSelected('')"  type="button"
-                    class="button">Mill</button></div>
-
-        </div>
-    </div>
-
-</div>
-
-
-<div   [hidden]="!loadpage3"  class="main">
-    <br>
-    <div style="display: flex;
-    flex-direction: row-reverse;">         
-        <img src="../../assets/back.png" style="width: 14%;" class="img-fluid" alt="Responsive image">
-
-    </div>
-    <br>
-    <div style="text-align: center;">
-        <h2 id="Select Machine Type"> Select Machine Number </h2>
-        <br>
-        <div style="display: flex;flex-wrap: wrap;justify-content: center;" id="button">
-            <div class="Custombutton"><button style="font-size:15px !important" type="button" (click)="machineSelected('1')" class="button">1</button>
-            </div>
-            <div class="Custombutton"><button style="font-size:15px !important" type="button" (click)="machineSelected('2')" class="button">2</button>
-            </div>
-            <div class="Custombutton"><button style="font-size:15px !important" type="button" (click)="machineSelected('3')" class="button">3</button>
-            </div>
-            <div class="Custombutton"><button style="font-size:15px !important" type="button" (click)="machineSelected('4')" class="button">4</button>
-            </div>
-            <div class="Custombutton"><button style="font-size:15px !important" type="button" (click)="machineSelected('5')" class="button">5</button>
-            </div>
-            <div class="Custombutton"><button style="font-size:15px !important" type="button" (click)="machineSelected('6')" class="button">6</button>
-            </div>
-            <div class="Custombutton"><button style="font-size:15px !important" type="button" (click)="machineSelected('7')" class="button">7</button>
-            </div>
-            <div class="Custombutton"><button style="font-size:15px !important" type="button" (click)="machineSelected('8')" class="button">8</button>
-            </div>
+        <h2 id="machineType" class="text-center mb-5 position-relative heading-02">
+            Select Machine Type
+            <span class="divider"></span>
+        </h2>
+        <div class="d-flex text-center justify-content-center flex-wrap" id="button">
+            <button (click)="mtypeSelected('')" type="button" class="btn-small mb-3 shadow">CNC</button>
+            <button (click)="mtypeSelected('')" type="button" class="btn-small mb-3 shadow">VMC</button>
+            <button (click)="mtypeSelected('')" type="button" class="btn-small mb-3 shadow">Drill</button>
+            <button (click)="mtypeSelected('')" type="button" class="btn-small mb-3 shadow">Tap</button>
+            <button (click)="mtypeSelected('')" type="button" class="btn-small mb-3 shadow">Mill</button>
         </div>
     </div>
 </div>
 
-<div   [hidden]="!loadpage4"  class="main">
-    <br>
-    <div style="display: flex;
-    flex-direction: row-reverse;">         
-        <img src="../../assets/back.png" style="width: 14%;" class="img-fluid" alt="Responsive image">
 
-    </div>
-    <br>
+<div [hidden]="!loadpage3" class="main-container p-4">
+    <!-- <div style="display: flex; flex-direction: row-reverse;">         
+        <img src="../../assets/back.png" style="width: 14%;" class="img-fluid" alt="Responsive image">
+    </div> -->
     <div style="text-align: center;">
-        <h2 id="Select Machine Type"> Select Operation </h2>
-        <br>
-        <div style="display: flex;flex-wrap: wrap;justify-content: center;" id="button">
-            <div class="Custombutton"><button style="font-size:15px !important" type="button" (click)="oprSelected('opr 1')" class="button">opr 1</button>
-            </div>
-            <div class="Custombutton"><button style="font-size:15px !important" type="button" (click)="oprSelected('opr 2')" class="button">opr 2</button>
-            </div>
-            <div class="Custombutton"><button style="font-size:15px !important" type="button" (click)="oprSelected('opr 3')" class="button">opr 3</button>
-            </div>
-            
+        <h2 id="selectmachine" class="text-center mb-5 position-relative heading-02"> Select Machine Number
+            <span class="divider"></span>
+        </h2>
+        <div class="d-flex text-center justify-content-center flex-wrap">
+            <button type="button" (click)="machineSelected('1')" class="btn-small mb-3 shadow">1</button>
+            <button type="button" (click)="machineSelected('2')" class="btn-small mb-3 shadow">2</button>
+            <button type="button" (click)="machineSelected('3')" class="btn-small mb-3 shadow">3</button>
+            <button type="button" (click)="machineSelected('4')" class="btn-small mb-3 shadow">4</button>
+            <button type="button" (click)="machineSelected('5')" class="btn-small mb-3 shadow">5</button>
+            <button type="button" (click)="machineSelected('6')" class="btn-small mb-3 shadow">6</button>
+            <button type="button" (click)="machineSelected('7')" class="btn-small mb-3 shadow">7</button>
+            <button type="button" (click)="machineSelected('8')" class="btn-small mb-3 shadow">8</button>
         </div>
     </div>
-    <br>
-    
-   
 </div>
 
 
-
-<div   [hidden]="!loadpage5"  class="main">
-    <br>
-    <div style="display: flex;
-    flex-direction: row-reverse;">         
+<div [hidden]="!loadpage4" class="main-container p-4">
+    <!-- <div style="display: flex; flex-direction: row-reverse;">         
         <img src="../../assets/back.png" style="width: 14%;" class="img-fluid" alt="Responsive image">
-
-    </div>
-    <br>
-    <div style="text-align: center;">
-        <h2 id="Select Machine Type"> Success </h2>
-        <br>
-        <div style="display: flex;flex-wrap: wrap;justify-content: center;" id="button">
-            <div class="Custombutton"><button style="font-size:15px !important" type="button" (click)="success()" class="button">Submit</button>
-            </div>
-             
-            
+    </div> -->
+    <div class="text-center mb-5 position-relative heading-02">
+        <h2 id="selectOperation" class="text-center mb-5 position-relative heading-02"> Select Operation
+            <span class="divider"></span>
+        </h2>
+        <div class="d-flex text-center justify-content-center flex-wrap">
+            <button type="button" (click)="oprSelected('opr 1')" class="btn-small mb-2">opr 1</button>
+            <button type="button" (click)="oprSelected('opr 2')" class="btn-small mb-2">opr 2</button>
+            <button type="button" (click)="oprSelected('opr 3')" class="btn-small mb-2">opr 3</button>
         </div>
     </div>
-    <br>
-    
-   
+</div>
+
+<div [hidden]="!loadpage5" class="main-container p-4">
+    <!-- <div style="display: flex; flex-direction: row-reverse;">
+        <img src="../../assets/back.png" class="img-fluid" alt="Responsive image">
+    </div> -->
+    <div class="text-center mb-5 position-relative heading-02">
+        <h2 id="successMsg" class="text-center mb-5 position-relative heading-02">Success
+            <span class="divider"></span>
+        </h2>
+        <div id="button" class="d-flex text-center justify-content-center flex-wrap">
+            <button type="button" (click)="success()" class="button">Submit</button>
+        </div>
+    </div>
 </div>
